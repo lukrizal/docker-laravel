@@ -1,92 +1,40 @@
-## Setting up
-<p>First thing first you need to have running docker and docker-compose on your
-end. This setup uses the following platforms:</p>
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-* PHP 7 FPM
-* MySQL 5.6
-* NGINX 1.10
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-## Knowing the Services
-<p>The setup consist of three services namely:</p>
+## About Laravel
 
-* app - The Laravel application.
-* database - The database of the app
-* web - The service responsible for rendering the app which will be
-the NGINX.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-<p>These services are commonly used for building Laravel applications, you can
-change the database and web services for your own preferences. And also you can
-add your own services like redis, memcache or beanstalkd. The <b>app</b> service
-can be modified by adding additional programs or packages like installing nodejs
-or php extension imagick for image processing.</p>
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Installing Laravel
-<p>There are many ways to get started with Laravel installation. But for this,
-we prepare the following below:</p>
+Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-We’ll create a throw-away container which install new copy of Laravel in `tmp`
-folder using the following command:
-```
-$ docker run --rm -v $(pwd):/var -w /var composer/composer \
-    create-project --prefer-dist laravel/laravel tmp
-```
+## Learning Laravel
 
-It will just tell the docker to create and run a container from
-`composer/composer` image then run the composer's `create-project` command.
+Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
-After the installation you can now move all the content of `tmp` folder to your
-project root. You can achieve it also using the following command:
+If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
 
-```
-$ docker run --rm -v $(pwd):/var -w /var bash \
-    mv tmp/* /var && mv tmp/.[^.]* var/
-```
+## Contributing
 
-You can also use `re-create.sh` script to do the same above.
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-```
-$ bash re-create.sh
-```
+## Security Vulnerabilities
 
-** Getting Started
-<p>Initially you need to put up the services using docker-compose then from that
-you may stop, pause or start them. See the following commands below or you may
-go deeply at <a href="https://docs.docker.com/compose/reference/overview/">
-docker-compose documentation</a>.</p>
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-<em>Take note that you should be running the following commands below inside
-the directory where the `docker-compose.yml`</em> reside.
+## License
 
-To start services in the background
-```
-$ docker-compose up -d
-```
-
-To start a stopped or paused service
-```
-$ docker-compose start [SERVICE..]
-```
-
-To stop a current running service
-```
-$ docker-compose start [SERVICE..]
-```
-
-To pause a current running service
-```
-$ docker-compose pause [SERVICE..]
-```
-
-To resume a paused service
-```
-$ docker-compose unpause [SERVICE..]
-```
-
-To remove all the services.
-```
-$ docker-compose rm
-```
-<em>I deeply encourage you to know more of these commands
-<a href="https://docs.docker.com/compose/reference">here</a></em>
-
-<em>This is derived from the blog: <a href="https://medium.com/@shakyShane/laravel-docker-part-1-setup-for-development-e3daaefaf3c">Laravel + Docker Part 1 — setup for Development</a> of <a href="https://medium.com/@shakyShane">Shane Osbourne</a></em>
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
