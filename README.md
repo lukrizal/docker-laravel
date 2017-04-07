@@ -48,6 +48,10 @@ You can also use `re-create.sh` script to do the same above.
 $ bash re-create.sh
 ```
 
+<em>Take note that there is an <a href="https://github.com/dduportal-dockerfiles/docker-compose/issues/1">issue</a> on mounting volume on Windows. 
+A work around is to prefix with a slash all directory related options. You can also
+use the script `re-create.for.windows.sh` when working with Windows with this repo</em>.
+
 ** Getting Started
 <p>Initially you need to put up the services using docker-compose then from that
 you may stop, pause or start them. See the following commands below or you may
@@ -55,7 +59,7 @@ go deeply at <a href="https://docs.docker.com/compose/reference/overview/">
 docker-compose documentation</a>.</p>
 
 <em>Take note that you should be running the following commands below inside
-the directory where the `docker-compose.yml`</em> reside.
+the directory where the `docker-compose.yml` reside</em>.
 
 To start services in the background
 ```
